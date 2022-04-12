@@ -8,7 +8,7 @@ function handleFile(req, res, callback){
 
     let fileName = '.' + path; //5 - variavel que recebe o final da url para procurar o arquivo que tem o msm nome e retorna-lo
 
-    fs.readFile(fileName, (err, data)=>{ //3 - tratando arquivos
+    fs.readFile(fileName, (err, data)=>{ //3 - tratando arquivos.. OBS: tentei condicionar o callback, antes de chamar o fs e não funcionou, não descobrir a causa, o data do fs não conseguia ser escrito no res.write(), já se eu chamasse antes de condicionar funcionava.
 
         if(err){ // trantado erros
 
